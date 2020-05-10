@@ -4,7 +4,9 @@ os.chdir('path\\to\\files')
 num = 0
 for f in os.listdir():
     f_name, f_ext = os.path.splitext(f)
-    num = (num + 1)
-    # print(f'RandomName_{num}.xlsx')
-    newName = f'New_Name_{num}.xlsx'
+    f_split = f_name.split('_')
+    f_name1, f_name2, f_num = f_split
+    f_num = f_num.strip()
+    f_num = f_num.strip().zfill(2)
+    newName = f'Automate_File_Rename_{f_num}.xlsx'
     os.rename(f, newName)
