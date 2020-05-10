@@ -1,0 +1,10 @@
+import os
+
+os.chdir('path\\to\\files')
+num = 0
+for f in os.listdir():
+    f_name, f_ext = os.path.splitext(f)
+    num = (num + 1)
+    # print(f'RandomName_{num}.xlsx')
+    newName = f'New_Name_{num}.xlsx'
+    os.rename(f, newName)
